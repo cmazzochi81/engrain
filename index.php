@@ -14,11 +14,14 @@
  //2.Set options
 
  //url to sen request to
- //curl_setopt($ch, CURLOPT_URL, 'https://mazzo-angular-app.herokuapp.com/api/all');
  curl_setopt($ch, CURLOPT_URL, 'https://api.sightmap.com/v1/assets/1273/multifamily/units?per-page=100');
+
 //return, instead of outputting directly
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+//set API key
  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+
  //whether to include the heaer in the output.  set to false
  curl_setopt($ch, CURLOPT_HEADER, 0);
 
@@ -35,9 +38,4 @@
  //Display raw output
  print_r($output);
 
-// $result = json_decode($output);
-// foreach ($result as $obj){
-//     echo '<h1>' . $obj->title . '</h1>';
-//     echo '<p>' . $obj->content . '</p>';
-// }
 ?>
